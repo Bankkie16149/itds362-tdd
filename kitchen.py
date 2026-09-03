@@ -9,4 +9,8 @@ class Quantity:
     def __eq__(self, other):
         return self.amount == other.amount and self.unit == other.unit
 
-    
+    def plus(self, other):
+        if self.unit == other.unit:
+            return Quantity(self.amount + other.amount, self.unit)
+        else:
+            raise ValueError("Units do not match")
