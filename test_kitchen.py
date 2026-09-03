@@ -16,3 +16,5 @@ def test_times_does_not_mutate_original():
     result = original.times(3)
     assert original.amount == 200      # ต้นฉบับต้องไม่เปลี่ยน
     assert result.amount == 600
+def test_quantities_with_same_amount_are_equal():
+    assert Quantity(200, "g") == Quantity(200, "g")
