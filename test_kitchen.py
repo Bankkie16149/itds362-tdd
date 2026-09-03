@@ -11,3 +11,8 @@ def test_multiply_quantity_different_numbers():
     result = q.times(4)
     assert result.amount == 40
     assert result.unit == "g"
+def test_times_does_not_mutate_original():
+    original = Quantity(200, "g")
+    result = original.times(3)
+    assert original.amount == 200      # ต้นฉบับต้องไม่เปลี่ยน
+    assert result.amount == 600
