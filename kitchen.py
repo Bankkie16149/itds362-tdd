@@ -5,5 +5,4 @@ class Quantity:
         self.unit = unit
 
     def times(self, multiplier):
-        self.amount = self.amount * multiplier       
-        return self
+        return Quantity(self.amount * multiplier, self.unit)
