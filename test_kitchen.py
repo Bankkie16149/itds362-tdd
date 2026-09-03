@@ -23,3 +23,7 @@ def test_different_units_are_not_equal():
 def test_add_same_unit():
     result = Quantity(200, "g").plus(Quantity(300, "g"))
     assert result == Quantity(500, "g")
+def test_add_different_units_converts_to_grams():
+    result = Quantity(200, "g").plus(Quantity(1, "oz")).reduce("g")
+    assert result.amount == 200 + 28.3495      # 1 oz ≈ 28.3495 g
+    assert result.unit == "g"
