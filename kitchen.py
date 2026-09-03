@@ -6,3 +6,7 @@ class Quantity:
 
     def times(self, multiplier):
         return Quantity(self.amount * multiplier, self.unit)
+    def __eq__(self, other):
+        return self.amount == other.amount and self.unit == other.unit
+
+    
