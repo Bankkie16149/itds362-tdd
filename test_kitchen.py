@@ -20,3 +20,6 @@ def test_quantities_with_same_amount_are_equal():
     assert Quantity(200, "g") == Quantity(200, "g")
 def test_different_units_are_not_equal():
     assert Quantity(1, "oz") != Quantity(1, "g")
+def test_add_same_unit():
+    result = Quantity(200, "g").plus(Quantity(300, "g"))
+    assert result == Quantity(500, "g")
