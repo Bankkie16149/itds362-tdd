@@ -5,5 +5,5 @@ class Quantity:
         self.unit = unit
 
     def times(self, multiplier):
-        self.amount = 600      
+        self.amount = self.amount * multiplier       
         return self
