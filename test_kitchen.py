@@ -27,3 +27,6 @@ def test_add_different_units_converts_to_grams():
     result = Quantity(200, "g").plus(Quantity(1, "oz")).reduce("g")
     assert result.amount == 200 + 28.3495      # 1 oz ≈ 28.3495 g
     assert result.unit == "g"
+def test_sum_then_multiply():
+    result = Quantity(200, "g").plus(Quantity(1, "oz")).times(2).reduce("g")
+    assert abs(result.amount - (200 + 28.3495) * 2) < 0.0001

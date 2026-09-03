@@ -39,3 +39,6 @@ class Sum:
 
     def times(self, multiplier):
         return Sum(self.left.times(multiplier), self.right.times(multiplier))
+    def __eq__(self, other):
+
+        return self.reduce(other.unit) == other
